@@ -49,3 +49,11 @@ jobs:
         contract:
           - MinterGateway.conf
           - ContinuousIndexingMath.conf
+          - MinterGateway-r01-only-activateMinter.conf
+          - MinterGateway-r01-only-cancelMint.conf
+          - MinterGateway-r01-only-freezeMinter.conf
+          - MinterGateway-r01-only-mintM.conf
+          - MinterGateway-r01-only-proposeMint.conf
+          - MinterGateway-r01-only-proposeRetrieval.conf
+          - MinterGateway-r01-only-updateCollateral.conf
+          - MinterGateway-r01-only-updateIndex.conf
