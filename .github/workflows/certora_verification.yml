@@ -28,13 +28,14 @@ jobs:
         with: { java-version: "11", java-package: jre }
 
       - name: Install certora cli
-        run: pip3 install certora-cli==7.0.7
+        run: pip3 install certora-cli==7.3.0
 
       - name: Install solc
         run: |
           wget https://github.com/ethereum/solidity/releases/download/v0.8.23/solc-static-linux
           chmod +x solc-static-linux
           sudo mv solc-static-linux /usr/local/bin/solc8.23
+
       - name: Verify
         run: |
           certoraRun certora/confs/${{ matrix.contract }}
@@ -48,3 +49,10 @@ jobs:
         contract:
           - MinterGateway.conf
           - ContinuousIndexingMath.conf
+          - MinterGateway-r01-only-activateMinter.conf
+          - MinterGateway-r01-only-cancelMint.conf
+          - MinterGateway-r01-only-freezeMinter.conf
+          - MinterGateway-r01-only-proposeMint.conf
+          - MinterGateway-r01-only-proposeRetrieval.conf
+          - MinterGateway-r01-only-updateCollateral.conf
+          - MinterGateway-r01-only-updateIndex.conf
